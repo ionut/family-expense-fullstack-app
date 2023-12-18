@@ -15,7 +15,7 @@ export const yt = <i className="fa-brands fa-youtube"></i>;
 export const card = <i className="fa-brands fa-cc-visa"></i>;
 export const users = <i className="fa-solid fa-users-between-lines"></i>;
 export const dollar = <i className="fa-solid fa-dollar-sign"></i>;
-export const calender = <i className="fa-solid fa-calendar"></i>;
+export const calendar = <i className="fa-solid fa-calendar"></i>;
 export const comment = <i className="fa-solid fa-comment"></i>;
 export const plus = <i className="fa-solid fa-plus"></i>;
 export const trash = <i className="fa-solid fa-trash"></i>;
@@ -27,3 +27,8 @@ export const food = <i className="fa-solid fa-bowl-food"></i>;
 export const medical = <i className="fa-solid fa-briefcase-medical"></i>;
 export const tv = <i className="fa-solid fa-tv"></i>;
 export const circle = <i className="fa-solid fa-circle-dot"></i>;
+
+// 
+export const cheese = <i className="fa-solid fa-cheese"></i>
+export const business = <i className="fa-solid fa-business-time"></i>
+export const bonus = <i className="fa-solid fa-plus"></i>

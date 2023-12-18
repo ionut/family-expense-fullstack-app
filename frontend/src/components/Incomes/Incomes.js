@@ -1,17 +1,16 @@
 import React from "react";
 import styled from "styled-components";
-import { InnerLayout } from "../../styles/Layout";
-import { useGlobalContext } from "../../context/GlobalContext";
+import { InnerLayout } from "../../Styles/Layout";
+import { useGlobalContext } from "../../Context/GlobalContext";
 import IncomeForm from "../Form/IncomeForm";
 import { useEffect } from "react";
+import IncomeItem from "./IncomeItem";
 
 function Incomes() {
   const { addIncome, getIncomes, incomes } = useGlobalContext();
-
   useEffect(() => {
     getIncomes();
   }, []);
-
   return (
     <IncomesStyled>
       <InnerLayout>
@@ -25,19 +24,7 @@ function Incomes() {
               const { _id, title, amount, date, category, description, type } = income;
 
               return (
-                <li>{title}</li>
-                // <IncomeItem
-                //   key={_id}
-                //   id={_id}
-                //   title={title}
-                //   description={description}
-                //   amount={amount}
-                //   date={date}
-                //   type={type}
-                //   category={category}
-                //   indicatorColor="var(--color-green)"
-                //   deleteItem={deleteIncome}
-                // />
+                <IncomeItem key={_id} id={_id} title={title} amount={amount} date={date} category={category} description={description} type={type} indicatorColor="var(--color-green)" />
               );
             })}
           </div>
@@ -71,6 +58,8 @@ const IncomesStyled = styled.div`
   .income-content {
     display: flex;
     gap: 2rem;
+    flex-direction:column;
+    @media(min-width:)
     .incomes {
       flex: 1;
     }

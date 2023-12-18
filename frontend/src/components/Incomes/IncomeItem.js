@@ -1,9 +1,61 @@
 import styled from "styled-components";
+import { bonus, business, calendar, cheese, comment, money, piggy, trash } from "../../Utils/icons";
+import Button from "../Button/Button";
 
-function IncomeItem() {
+function IncomeItem({ id,
+  title,
+  amount,
+  date,
+  category,
+  description,
+  deleteItem,
+  indicatorColor,
+  type }) {
+
+  const categoryIcon = () => {
+    switch (category) {
+      case 'salary':
+        return money;
+      case 'fromaj':
+        return cheese;
+      case 'busines':
+        return business;
+      case 'bonus':
+        return bonus;
+      case 'other':
+        return piggy;
+      default:
+        return;
+    }
+  }
+
+
+
   return (
-    <IncomeItemStyled>
-      <div className="icon"></div>
+    <IncomeItemStyled indicatorColor={indicatorColor}>
+      <div className="icon">
+        {categoryIcon()}
+        {/* {type === 'expense' ? expenseCatIcon() : categoryIcon()} */}
+      </div>
+      <div className="content">
+        <h5>{title}</h5>
+        <div className="inner-content">
+          <div className="text">
+            <p>{amount} RON</p>
+            <p>{calendar} {date}</p>
+            <p>{comment} {description}</p>
+          </div>
+          <div className="btn-con">
+            <Button icon={trash}
+              bPad={'1rem'}
+              bRad={'50%'}
+              bg={'var(--primary-color'}
+              color={'#fff'}
+              iColor={'#fff'}
+              hColor={'var(--color-green)'} />
+          </div>
+        </div>
+      </div>
     </IncomeItemStyled>
   );
 }

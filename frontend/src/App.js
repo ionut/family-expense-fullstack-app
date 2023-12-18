@@ -1,13 +1,13 @@
 import styled from "styled-components";
 import bg from "./images/bg.png";
-import { MainLayout } from "./styles/Layout";
-import Orb from "./components/Orb/Orb";
-import Navigation from "./components/Navigation/Navigation";
+import { MainLayout } from "./Styles/Layout";
+import Orb from "./Components/Orb/Orb";
+import Navigation from "./Components/Navigation/Navigation";
 import { useState } from "react";
-import Dashboard from "./components/Dashboard/Dashboard";
-import Expenses from "./components/Expenses/Expenses";
-import Incomes from "./components/Incomes/Incomes";
-import { useGlobalContext } from "./context/GlobalContext";
+import Dashboard from "./Components/Dashboard/Dashboard";
+import Expenses from "./Components/Expenses/Expenses";
+import Incomes from "./Components/Incomes/Incomes";
+import { useGlobalContext } from "./Context/GlobalContext";
 
 function App() {
   const [active, setActive] = useState(1);

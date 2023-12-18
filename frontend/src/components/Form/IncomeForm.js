@@ -2,9 +2,9 @@ import { useState } from "react";
 import styled from "styled-components";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { useGlobalContext } from "../../context/GlobalContext";
+import { useGlobalContext } from "../../Context/GlobalContext";
 import Button from "../Button/Button";
-import { plus } from "../../utils/icons";
+import { plus } from "../../Utils/icons";
 
 function IncomeForm() {
   const { addIncome } = useGlobalContext();
