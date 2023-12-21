@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { InnerLayout } from "../../styles/Layout";
+import { InnerLayout } from "../../Styles/Layout";
 import Chart from "../Chart/Chart";
 import { useGlobalContext } from "../../context/GlobalContext";
 

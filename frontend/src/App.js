@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import bg from "./images/bg.png";
-import { MainLayout } from "./styles/Layout";
+import { MainLayout } from "./Styles/Layout";
 import Orb from "./Components/Orb/Orb";
 import Navigation from "./Components/Navigation/Navigation";
 import { useState } from "react";

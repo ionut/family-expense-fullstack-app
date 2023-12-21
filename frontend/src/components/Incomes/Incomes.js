@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
-import { InnerLayout } from "../../styles/Layout";
+import { InnerLayout } from "../../Styles/Layout";
 import { useGlobalContext } from "../../context/GlobalContext";
 import IncomeForm from "../Form/IncomeForm";
 import IncomeItem from "./IncomeItem";
