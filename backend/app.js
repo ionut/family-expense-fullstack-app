@@ -19,7 +19,7 @@ app.use(express.json());
 
 // use cors to not have problems acessing our server ex. your domain
 app.use(cors(
-    { origin: "*" }
+    { origin: ["http://localhost:3000", "https://server-u2ad.onrender.com"] }
 ));
 
 // routes
