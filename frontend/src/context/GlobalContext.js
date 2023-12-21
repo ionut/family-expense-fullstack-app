@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import axios from "axios";
 
-const BASE_URL = "https://family-expense-backend.vercel.app/api/v1";
+const BASE_URL = "https://server-u2ad.onrender.com/api/v1";
 
 const GlobalContext = React.createContext();
 
