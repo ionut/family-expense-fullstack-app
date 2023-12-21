@@ -19,7 +19,7 @@ app.use(express.json());
 
 // use cors to not have problems acessing our server ex. your domain
 app.use(cors(
-    { origin: ["http://localhost:3000", "https://server-u2ad.onrender.com"] }
+    { origin: ["http://localhost:3000", "https://server-u2ad.onrender.com", "https://family-expense-frontend.vercel.app"] }
 ));
 
 // routes
