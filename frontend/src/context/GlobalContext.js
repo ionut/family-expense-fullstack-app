@@ -25,8 +25,7 @@ export const GlobalProvider = ({ children }) => {
     getIncomes();
   };
 
-  const totalIncomes = () => {
-    let totalIncome = 0;
+  const totalIncomes = (totalIncome = 0) => {
     incomes.forEach((income) => {
       totalIncome = totalIncome + income.amount;
     });
@@ -49,8 +48,7 @@ export const GlobalProvider = ({ children }) => {
     getExpenses();
   };
 
-  const totalExpenses = () => {
-    let totalExpense = 0;
+  const totalExpenses = (totalExpense = 0) => {
     expenses.forEach((expense) => {
       totalExpense = totalExpense + expense.amount;
     });
