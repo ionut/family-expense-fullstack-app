@@ -19,7 +19,7 @@ app.use(express.json());
 
 // use cors to not have problems acessing our server ex. your domain
 app.use(cors(
-    { origin: ["https://family-expense-backend.vercel.app"], methods: ["POST", "GET", "DELETE", "UPDATE"] }
+    { origin: ["http://localhost:3000", "https://family-expense-backend.vercel.app"], methods: ["POST", "GET", "DELETE", "UPDATE"] }
 ));
 
 // routes
