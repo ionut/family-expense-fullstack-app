@@ -6,8 +6,8 @@ import { useGlobalContext } from "../../context/GlobalContext";
 import Button from "../Button/Button";
 import { plus } from "../../utils/icons";
 
-function IncomeForm() {
-  const { addIncome, getIncomes } = useGlobalContext();
+function ExpenseForm() {
+  const { addExpense, getExpenses } = useGlobalContext();
   const [inputState, setInputState] = useState({
     title: "",
     amount: "",
@@ -24,7 +24,7 @@ function IncomeForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    addIncome(inputState);
+    addExpense(inputState);
     setInputState({
       title: "",
       amount: "",
@@ -32,16 +32,16 @@ function IncomeForm() {
       category: "",
       description: "",
     });
-    getIncomes();
+    getExpenses();
   };
 
   return (
     <FormStyled onSubmit={handleSubmit}>
       <div className="input-control">
-        <input type="text" value={title} name={"title"} placeholder="Income title" onChange={handleInput("title")} className="input-control" />
+        <input type="text" value={title} name={"title"} placeholder="Expense title" onChange={handleInput("title")} className="input-control" />
       </div>
       <div className="input-control">
-        <input type="text" value={amount} name={"amount"} placeholder="Income amount" onChange={handleInput("amount")} className="input-control" />
+        <input type="text" value={amount} name={"amount"} placeholder="Expense amount" onChange={handleInput("amount")} className="input-control" />
       </div>
       <div className="input-control">
         <DatePicker
@@ -59,11 +59,13 @@ function IncomeForm() {
           <option value="" disabled>
             Select Option
           </option>
-          <option value="salary">Salary</option>
+          <option value="groceries">Mancare + casa</option>
+          <option value="outside">Iesiri</option>
+          <option value="personal">Personale</option>
+          <option value="bills">facturi</option>
           <option value="fromaj">Fromaj</option>
-          <option value="business">EntourageAddict</option>
-          <option value="bonus">Bonus</option>
-          <option value="other">Other</option>
+          <option value="rent">Chirie</option>
+          <option value="car">Masina</option>
         </select>
       </div>
       <div className="input-control">
@@ -78,7 +80,7 @@ function IncomeForm() {
         ></textarea>
       </div>
       <div className="submit-btn">
-        <Button name={"Add Income"} icon={plus} bPad={".8rem 1.6rem"} bRad={"30px"} bg={"var(--color-accent"} color={"#fff"} />
+        <Button name={"Add Expense"} icon={plus} bPad={".8rem 1.6rem"} bRad={"30px"} bg={"var(--color-accent"} color={"#fff"} />
       </div>
     </FormStyled>
   );
@@ -135,4 +137,4 @@ const FormStyled = styled.form`
   }
 `;
 
-export default IncomeForm;
+export default ExpenseForm;

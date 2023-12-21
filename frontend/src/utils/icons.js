@@ -7,7 +7,6 @@ export const logout = <i className="fa-solid fa-sign-out"></i>;
 export const trend = <i className="fa-solid fa-money-bill-trend-up"></i>;
 export const expenses = <i className="fa-solid fa-money-bill-transfer"></i>;
 export const money = <i className="fa-solid fa-money-bill"></i>;
-export const freelance = <i className="fa-solid fa-earth-americas"></i>;
 export const stocks = <i className="fa-solid fa-arrow-trend-up"></i>;
 export const bitcoin = <i className="fa-brands fa-bitcoin"></i>;
 export const piggy = <i className="fa-solid fa-piggy-bank"></i>;
@@ -20,15 +19,15 @@ export const comment = <i className="fa-solid fa-comment"></i>;
 export const plus = <i className="fa-solid fa-plus"></i>;
 export const trash = <i className="fa-solid fa-trash"></i>;
 export const signout = <i className="fa-solid fa-right-from-bracket"></i>;
-export const takeaway = <i className="fa-solid fa-utensils"></i>;
-export const clothing = <i className="fa-solid fa-shirt"></i>;
-export const book = <i className="fa-solid fa-book-open"></i>;
 export const food = <i className="fa-solid fa-bowl-food"></i>;
-export const medical = <i className="fa-solid fa-briefcase-medical"></i>;
-export const tv = <i className="fa-solid fa-tv"></i>;
-export const circle = <i className="fa-solid fa-circle-dot"></i>;
 
-// 
-export const cheese = <i className="fa-solid fa-cheese"></i>
-export const business = <i className="fa-solid fa-business-time"></i>
-export const bonus = <i className="fa-solid fa-plus"></i>
+//incomes
+export const cheese = <i className="fa-solid fa-cheese"></i>;
+export const business = <i className="fa-solid fa-business-time"></i>;
+export const bonus = <i className="fa-solid fa-plus"></i>;
+// expenses
+export const home = <i className="fa-solid fa-house"></i>;
+export const outside = <i className="fa-solid fa-beer-mug-empty"></i>;
+export const cart = <i className="fa-solid fa-cart-shopping"></i>;
+export const bills = <i className="fa-solid fa-money-bills"></i>;
+export const car = <i className="fa-solid fa-car"></i>;

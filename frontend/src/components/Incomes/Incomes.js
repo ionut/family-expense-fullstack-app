@@ -1,13 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
-import { InnerLayout } from "../../Styles/Layout";
-import { useGlobalContext } from "../../Context/GlobalContext";
+import { InnerLayout } from "../../styles/Layout";
+import { useGlobalContext } from "../../context/GlobalContext";
 import IncomeForm from "../Form/IncomeForm";
-import { useEffect } from "react";
 import IncomeItem from "./IncomeItem";
 
 function Incomes() {
-  const { addIncome, getIncomes, incomes } = useGlobalContext();
+  const { addIncome, getIncomes, incomes, deleteIncome, totalIncomes } = useGlobalContext();
+
   useEffect(() => {
     getIncomes();
   }, []);
@@ -15,6 +15,9 @@ function Incomes() {
     <IncomesStyled>
       <InnerLayout>
         <h1>Incomes</h1>
+        <h2 className="total-income">
+          Total Income: <span>RON {totalIncomes()}</span>
+        </h2>
         <div className="income-content">
           <div className="form-container">
             <IncomeForm />
@@ -24,7 +27,18 @@ function Incomes() {
               const { _id, title, amount, date, category, description, type } = income;
 
               return (
-                <IncomeItem key={_id} id={_id} title={title} amount={amount} date={date} category={category} description={description} type={type} indicatorColor="var(--color-green)" />
+                <IncomeItem
+                  key={_id}
+                  id={_id}
+                  title={title}
+                  amount={amount}
+                  date={date}
+                  category={category}
+                  description={description}
+                  type={type}
+                  indicatorColor="var(--color-green)"
+                  deleteItem={deleteIncome}
+                />
               );
             })}
           </div>
@@ -58,9 +72,8 @@ const IncomesStyled = styled.div`
   .income-content {
     display: flex;
     gap: 2rem;
-    flex-direction:column;
-    @media(min-width:)
-    .incomes {
+    flex-direction: column;
+    @media (min-width: ) .incomes {
       flex: 1;
     }
   }

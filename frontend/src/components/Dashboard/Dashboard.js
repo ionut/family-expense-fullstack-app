@@ -1,24 +1,32 @@
 import React from "react";
 import styled from "styled-components";
-import { InnerLayout } from "../../Styles/Layout";
+import { InnerLayout } from "../../styles/Layout";
+import Chart from "../Chart/Chart";
 
 function Dashboard() {
   return (
     <DashboardStyled>
-      <InnerLayout>Dashboard</InnerLayout>
+      <InnerLayout>
+        <h1>All transactions</h1>
+        <div className="stats-container">
+          <div className="chart-container">
+            <Chart />
+          </div>
+        </div>
+      </InnerLayout>
     </DashboardStyled>
   );
 }
 
 const DashboardStyled = styled.div`
-  .stats-con {
+  .stats-container {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 2rem;
-    .chart-con {
+    .chart-container {
       grid-column: 1 / 4;
       height: 400px;
-      .amount-con {
+      .amount-container {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 2rem;
@@ -56,7 +64,7 @@ const DashboardStyled = styled.div`
       }
     }
 
-    .history-con {
+    .history-container {
       grid-column: 4 / -1;
       h2 {
         margin: 1rem 0;

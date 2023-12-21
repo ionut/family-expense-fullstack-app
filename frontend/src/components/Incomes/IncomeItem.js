@@ -1,58 +1,72 @@
 import styled from "styled-components";
-import { bonus, business, calendar, cheese, comment, money, piggy, trash } from "../../Utils/icons";
+import { bills, bonus, business, calendar, car, cart, cheese, comment, food, home, money, outside, piggy, trash } from "../../utils/icons";
 import Button from "../Button/Button";
-
-function IncomeItem({ id,
-  title,
-  amount,
-  date,
-  category,
-  description,
-  deleteItem,
-  indicatorColor,
-  type }) {
-
+import { dateFormat } from "../../utils/dateFormat";
+function IncomeItem({ id, title, amount, date, category, description, deleteItem, indicatorColor, type }) {
   const categoryIcon = () => {
     switch (category) {
-      case 'salary':
+      case "salary":
         return money;
-      case 'fromaj':
+      case "fromaj":
         return cheese;
-      case 'busines':
+      case "busines":
         return business;
-      case 'bonus':
+      case "bonus":
         return bonus;
-      case 'other':
+      case "other":
         return piggy;
       default:
         return;
     }
-  }
+  };
 
-
+  const expenseCatIcon = () => {
+    switch (category) {
+      case "groceries":
+        return food;
+      case "outside":
+        return outside;
+      case "personal":
+        return cart;
+      case "bills":
+        return bills;
+      case "fromaj":
+        return cheese;
+      case "rent":
+        return home;
+      case "car":
+        return car;
+      default:
+        return "";
+    }
+  };
 
   return (
     <IncomeItemStyled indicatorColor={indicatorColor}>
-      <div className="icon">
-        {categoryIcon()}
-        {/* {type === 'expense' ? expenseCatIcon() : categoryIcon()} */}
-      </div>
+      <div className="icon">{type === "expense" ? expenseCatIcon() : categoryIcon()}</div>
       <div className="content">
         <h5>{title}</h5>
         <div className="inner-content">
           <div className="text">
             <p>{amount} RON</p>
-            <p>{calendar} {date}</p>
-            <p>{comment} {description}</p>
+            <p>
+              {calendar} {dateFormat(date)}
+            </p>
+            <p>
+              {comment} {description}
+            </p>
           </div>
           <div className="btn-con">
-            <Button icon={trash}
-              bPad={'1rem'}
-              bRad={'50%'}
-              bg={'var(--primary-color'}
-              color={'#fff'}
-              iColor={'#fff'}
-              hColor={'var(--color-green)'} />
+            <Button
+              icon={trash}
+              bPad={"1rem"}
+              bRad={"50%"}
+              bg={"var(--primary-color"}
+              color={"#fff"}
+              iColor={"#fff"}
+              hColor={"var(--color-green)"}
+              onClick={() => deleteItem(id)}
+            />
           </div>
         </div>
       </div>
