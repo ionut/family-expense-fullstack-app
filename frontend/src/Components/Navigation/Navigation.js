@@ -6,12 +6,12 @@ import { menuItems } from "../../utils/menuItems";
 function Navigation({ active, setActive }) {
   return (
     <NavStyled>
-      <div className="user-container">
+      {/* <div className="user-container">
         <img src={avatar} alt="" />
         <div className="text">
           <h2>Huso Family</h2>
         </div>
-      </div>
+      </div> */}
       <ul className="menu-items">
         {menuItems.map((item) => {
           return (
@@ -27,13 +27,9 @@ function Navigation({ active, setActive }) {
 }
 
 const NavStyled = styled.nav`
-  padding: 2rem 1.5rem;
-  width: 374px;
-  height: 100%;
-  background: rgba(252, 246, 249, 0.78);
-  border: 3px solid #ffffff;
-  backdrop-filter: blur(4.5px);
-  border-radius: 32px;
+  // padding: 2rem 0 0 1.5rem;
+  // width: 374px;
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -65,16 +61,19 @@ const NavStyled = styled.nav`
     flex: 1;
     display: flex;
     flex-direction: column;
+    // @media (min-width: 768px) {
+    //   flex-direction: column;
+    // }
     li {
       display: grid;
       grid-template-columns: 40px auto;
       align-items: center;
-      margin: 0.6rem 0;
+      // margin: 0.6rem 0;
       font-weight: 500;
       cursor: pointer;
       transition: all 0.4s ease-in-out;
       color: rgba(34, 34, 96, 0.6);
-      padding-left: 1rem;
+      padding: 1rem;
       position: relative;
       i {
         color: rgba(34, 34, 96, 0.6);
@@ -86,6 +85,7 @@ const NavStyled = styled.nav`
 
   .active {
     color: rgba(34, 34, 96, 1) !important;
+    background: rgb(227 208 217);
     i {
       color: rgba(34, 34, 96, 1) !important;
     }

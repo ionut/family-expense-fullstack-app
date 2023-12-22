@@ -73,7 +73,10 @@ const IncomesStyled = styled.div`
     display: flex;
     gap: 2rem;
     flex-direction: column;
-    @media (min-width: ) .incomes {
+    @media (min-width: 1200px) {
+      flex-direction: row;
+    }
+    .incomes {
       flex: 1;
     }
   }

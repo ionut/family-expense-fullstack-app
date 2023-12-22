@@ -17,11 +17,11 @@ function Expenses() {
         <h2 className="total-Expense">
           Total Expense: <span>RON {totalExpenses()}</span>
         </h2>
-        <div className="Expense-content">
+        <div className="expense-content">
           <div className="form-container">
             <ExpenseForm />
           </div>
-          <div className="Expenses">
+          <div className="expenses">
             {expenses.map((expense) => {
               const { _id, title, amount, date, category, description, type } = expense;
 
@@ -68,11 +68,14 @@ const ExpensesStyled = styled.div`
       color: var(--color-green);
     }
   }
-  .Expense-content {
+  .expense-content {
     display: flex;
     gap: 2rem;
     flex-direction: column;
-    @media (min-width: ) .Expenses {
+    @media (min-width: 1200px) {
+      flex-direction: row;
+    }
+    .expenses {
       flex: 1;
     }
   }

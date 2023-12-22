@@ -43,9 +43,11 @@ function IncomeItem({ id, title, amount, date, category, description, deleteItem
 
   return (
     <IncomeItemStyled indicatorColor={indicatorColor}>
-      <div className="icon">{type === "expense" ? expenseCatIcon() : categoryIcon()}</div>
       <div className="content">
+        <div className="icon">{type === "expense" ? expenseCatIcon() : categoryIcon()}</div>
         <h5>{title}</h5>
+      </div>
+      <div className="content">
         <div className="inner-content">
           <div className="text">
             <p>{amount} RON</p>
@@ -59,7 +61,7 @@ function IncomeItem({ id, title, amount, date, category, description, deleteItem
           <div className="btn-con">
             <Button
               icon={trash}
-              bPad={"1rem"}
+              bPad={".6rem"}
               bRad={"50%"}
               bg={"var(--primary-color"}
               color={"#fff"}
@@ -82,32 +84,44 @@ const IncomeItemStyled = styled.div`
   padding: 1rem;
   margin-bottom: 1rem;
   display: flex;
+  flex-direction: column;
   align-items: center;
   gap: 1rem;
   width: 100%;
   color: #222260;
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
   .icon {
-    width: 80px;
-    height: 80px;
+    width: 45px;
+    height: 45px;
     border-radius: 20px;
     background: #f5f5f5;
     display: flex;
     align-items: center;
     justify-content: center;
     border: 2px solid #ffffff;
+    @media (min-width: 767px) {
+      width: 80px;
+      height: 80px;
+    }
     i {
-      font-size: 2.6rem;
+      font-size: 1.5rem;
+      @media (min-width: 767px) {
+        font-size: 2.6rem;
+      }
     }
   }
 
   .content {
     flex: 1;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: center;
     gap: 0.2rem;
     h5 {
       font-size: 1.3rem;
-      padding-left: 2rem;
+      padding-left: 0.2rem;
       position: relative;
       &::before {
         content: "";
@@ -126,10 +140,14 @@ const IncomeItemStyled = styled.div`
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 0.5rem;
       .text {
         display: flex;
         align-items: center;
-        gap: 1.5rem;
+        gap: 0.2rem;
+        @media (min-width: 768px) {
+          gap: 1.5rem;
+        }
         p {
           display: flex;
           align-items: center;

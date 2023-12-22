@@ -5,7 +5,7 @@ import Chart from "../Chart/Chart";
 import { useGlobalContext } from "../../context/GlobalContext";
 
 function Dashboard() {
-  const { totalIncomes, totalExpenses } = useGlobalContext()
+  const { totalIncomes, totalExpenses } = useGlobalContext();
 
   return (
     <DashboardStyled>
@@ -16,11 +16,11 @@ function Dashboard() {
             <Chart />
             <div className="amount-container">
               <div className="income">
-                <h2>Total Income</h2>
+                <h2>Total Incomes</h2>
                 <p>RON {totalIncomes()}</p>
               </div>
               <div className="expense">
-                <h2>Total Income</h2>
+                <h2>Total Expenses</h2>
                 <p>RON {totalExpenses()}</p>
               </div>
             </div>
@@ -33,11 +33,13 @@ function Dashboard() {
 
 const DashboardStyled = styled.div`
   .stats-container {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 2rem;
+    @media (min-width: 767px) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
     .chart-container {
-      grid-column: 1 / 4;
+      grid-column: 1 / 2;
       height: 400px;
       .amount-container {
         display: grid;
@@ -57,7 +59,7 @@ const DashboardStyled = styled.div`
           border-radius: 20px;
           padding: 1rem;
           p {
-            font-size: 3.5rem;
+            font-size: 3rem;
             font-weight: 700;
           }
         }
