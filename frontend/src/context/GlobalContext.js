@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import axios from "axios";
 
-const BASE_URL = "https://server-u2ad.onrender.com/api/v1";
+const BASE_URL = "http://16.16.209.180:5000/api/v1";
 
 const GlobalContext = React.createContext();
 
