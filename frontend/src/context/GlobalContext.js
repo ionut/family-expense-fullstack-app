@@ -56,9 +56,21 @@ export const GlobalProvider = ({ children }) => {
     return totalExpense;
   };
 
+  const totalBalance = () => {
+    return totalIncomes() - totalExpenses();
+  }
+
+  const recentHistory = () => {
+    const history = [...incomes, ...expenses]
+    history.sort((a, b) => {
+      return new Date(b.createdAt) - new Date(a.createdAt)
+    })
+    return history.slice(0, 7)
+  }
+
   return (
     <GlobalContext.Provider
-      value={{ addIncome, getIncomes, incomes, deleteIncome, totalIncomes, expenses, addExpense, getExpenses, deleteExpense, totalExpenses }}
+      value={{ addIncome, getIncomes, incomes, deleteIncome, totalIncomes, expenses, addExpense, getExpenses, deleteExpense, totalExpenses, totalBalance, recentHistory }}
     >
       {children}
     </GlobalContext.Provider>

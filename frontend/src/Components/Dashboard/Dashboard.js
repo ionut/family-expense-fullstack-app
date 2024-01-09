@@ -3,9 +3,10 @@ import styled from "styled-components";
 import { InnerLayout } from "../../styles/Layout";
 import Chart from "../Chart/Chart";
 import { useGlobalContext } from "../../context/GlobalContext";
+import History from "../History/History";
 
 function Dashboard() {
-  const { totalIncomes, totalExpenses } = useGlobalContext();
+  const { totalIncomes, totalExpenses, totalBalance } = useGlobalContext();
 
   return (
     <DashboardStyled>
@@ -17,17 +18,25 @@ function Dashboard() {
             <div className="amount-container">
               <div className="income">
                 <h2>Total Incomes</h2>
-                <p>RON {totalIncomes()}</p>
+                <p style={{ color: 'var(--color-green)' }}>RON {totalIncomes()}</p>
               </div>
               <div className="expense">
                 <h2>Total Expenses</h2>
-                <p>RON {totalExpenses()}</p>
+                <p style={{ color: 'red' }}>RON {totalExpenses()}</p>
+              </div>
+              <div className="balance">
+                <h2>Balance</h2>
+                <p style={totalBalance() > 0 ? { color: 'var(--color-green)' } : { color: 'red' }}>RON {totalBalance()}</p>
               </div>
             </div>
+
+          </div>
+          <div className="history-container">
+            <History />
           </div>
         </div>
       </InnerLayout>
-    </DashboardStyled>
+    </DashboardStyled >
   );
 }
 
@@ -43,12 +52,12 @@ const DashboardStyled = styled.div`
       height: 400px;
       .amount-container {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         gap: 2rem;
         margin-top: 2rem;
         .income,
         .expense {
-          grid-column: span 2;
+          grid-column: span 1;
         }
         .income,
         .expense,
@@ -65,7 +74,7 @@ const DashboardStyled = styled.div`
         }
 
         .balance {
-          grid-column: 2 / 4;
+          grid-column: span 2;
           display: flex;
           flex-direction: column;
           justify-content: center;
@@ -73,14 +82,14 @@ const DashboardStyled = styled.div`
           p {
             color: var(--color-green);
             opacity: 0.6;
-            font-size: 4.5rem;
+            font-size: 4rem;
           }
         }
       }
     }
 
     .history-container {
-      grid-column: 4 / -1;
+      grid-column: 2/2;
       h2 {
         margin: 1rem 0;
         display: flex;

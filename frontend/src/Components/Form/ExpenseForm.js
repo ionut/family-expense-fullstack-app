@@ -38,10 +38,10 @@ function ExpenseForm() {
   return (
     <FormStyled onSubmit={handleSubmit}>
       <div className="input-control">
-        <input type="text" value={title} name={"title"} placeholder="Expense title" onChange={handleInput("title")} className="input-control" />
+        <input type="text" value={title} name={"title"} placeholder="Expense title" onChange={handleInput("title")} className="input-control" required />
       </div>
       <div className="input-control">
-        <input type="text" value={amount} name={"amount"} placeholder="Expense amount" onChange={handleInput("amount")} className="input-control" />
+        <input type="number" value={amount} name={"amount"} placeholder="Expense amount" onChange={handleInput("amount")} className="input-control" required />
       </div>
       <div className="input-control">
         <DatePicker
@@ -52,6 +52,7 @@ function ExpenseForm() {
           onChange={(date) => {
             setInputState({ ...inputState, date: date });
           }}
+          required
         />
       </div>
       <div className="selects input-control">
@@ -77,10 +78,11 @@ function ExpenseForm() {
           cols="30"
           rows="4"
           onChange={handleInput("description")}
+          required
         ></textarea>
       </div>
       <div className="submit-btn">
-        <Button name={"Add Expense"} icon={plus} bPad={".8rem 1.6rem"} bRad={"30px"} bg={"var(--color-accent"} color={"#fff"} />
+        <Button name={"Add Expense"} icon={plus} bPad={".8rem 1.6rem"} bRad={"30px"} bg={"var(--primary-color"} color={"#fff"} />
       </div>
     </FormStyled>
   );
@@ -104,9 +106,9 @@ const FormStyled = styled.form`
     resize: none;
     width: 100%;
     box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
-    color: rgba(34, 34, 96, 0.9);
+    color: rgba(15, 16, 53, 0.9);
     &::placeholder {
-      color: rgba(34, 34, 96, 0.4);
+      color: rgba(15, 16, 53, 0.4);
     }
   }
   .input-control {
@@ -119,10 +121,10 @@ const FormStyled = styled.form`
     display: flex;
     justify-content: flex-end;
     select {
-      color: rgba(34, 34, 96, 0.4);
+      color: rgba(15, 16, 53, 0.4);
       &:focus,
       &:active {
-        color: rgba(34, 34, 96, 1);
+        color: rgba(15, 16, 53, 1);
       }
     }
   }
@@ -131,7 +133,7 @@ const FormStyled = styled.form`
     button {
       box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
       &:hover {
-        background: var(--color-green) !important;
+        background: red !important;
       }
     }
   }

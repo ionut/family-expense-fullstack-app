@@ -50,10 +50,10 @@ const NavStyled = styled.nav`
       box-shadow: 0px 1px 17px rgba(0, 0, 0, 0.06);
     }
     h2 {
-      color: rgba(34, 34, 96, 1);
+      color: rgba(15, 16, 53, 1);
     }
     p {
-      color: rgba(34, 34, 96, 0.6);
+      color: rgba(15, 16, 53, 0.6);
     }
   }
 
@@ -72,11 +72,11 @@ const NavStyled = styled.nav`
       font-weight: 500;
       cursor: pointer;
       transition: all 0.4s ease-in-out;
-      color: rgba(34, 34, 96, 0.6);
+      color: rgba(15, 16, 53, 0.6);
       padding: 1rem;
       position: relative;
       i {
-        color: rgba(34, 34, 96, 0.6);
+        color: rgba(15, 16, 53, 0.6);
         font-size: 1.4rem;
         transition: all 0.4s ease-in-out;
       }
@@ -84,10 +84,10 @@ const NavStyled = styled.nav`
   }
 
   .active {
-    color: rgba(34, 34, 96, 1) !important;
-    background: rgb(227 208 217);
+    color: rgba(15, 16, 53, 1) !important;
+    background: rgb(127, 199, 217);
     i {
-      color: rgba(34, 34, 96, 1) !important;
+      color: rgba(15, 16, 53, 1) !important;
     }
     &::before {
       content: "";
@@ -96,7 +96,7 @@ const NavStyled = styled.nav`
       top: 0;
       width: 4px;
       height: 100%;
-      background: #222260;
+      background: #0F1035;
       border-radius: 0 10px 10px 0;
     }
   }

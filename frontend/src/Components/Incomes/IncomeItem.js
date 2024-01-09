@@ -88,7 +88,7 @@ const IncomeItemStyled = styled.div`
   align-items: center;
   gap: 1rem;
   width: 100%;
-  color: #222260;
+  color: #0F1035;
   @media (min-width: 768px) {
     flex-direction: row;
   }
@@ -114,7 +114,7 @@ const IncomeItemStyled = styled.div`
   }
 
   .content {
-    flex: 1;
+    // flex: 1;
     display: flex;
     flex-direction: row;
     align-items: center;

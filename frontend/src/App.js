@@ -18,10 +18,8 @@ function App() {
       case 1:
         return <Dashboard />;
       case 2:
-        return <Dashboard />;
-      case 3:
         return <Incomes />;
-      case 4:
+      case 3:
         return <Expenses />;
       default:
         return <Dashboard />;
@@ -47,8 +45,8 @@ const AppStyled = styled.div`
   position: relative;
   main {
     flex: 1;
-    background: rgb(227 208 217);
-    box-shadow: 5px 11px 11px 17px rgba(227, 208, 217, 0.42);
+    background: rgb(127, 199, 217);
+    box-shadow: 5px 11px 11px 17px rgba(127, 199, 217, 0.42);
     overflow-x: hidden;
     &::-webkit-scrollbar {
       width: 0;
